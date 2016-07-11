@@ -1,0 +1,12 @@
+<div ng-if="show" class="col-md-12 character-block" style="background-color:#DCDCDC">
+	<div class="row">
+		<div class="col-md-4">
+			<img ng-src="{{show.show.image.medium}}">
+		</div>
+		<div class="col-md-8">
+			<h2 class="success">{{show.show.name}}</h2>
+			<p ng-bind-html="show.show.summary | trustHTML"></p>
+    		<a href="/shows/{{show.show.id}}?embed=cast" class="btn btn-warning">Details</a>
+		</div>
+	</div>
+</div>

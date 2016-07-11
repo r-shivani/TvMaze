@@ -1,0 +1,27 @@
+<div class="container" style="background-color:#DCDCDC">
+	<div class="row">
+	<h2><b>{{show.name}}</b></h2>
+		<div ng-repeat="g in show.genres"><h5>{{g}} |</h5></div>
+	<div class="col-xs-6 col-md-4">
+		<div><img ng-src="{{show.image.medium}}"></div>
+	</div>
+  	<div class="col-xs-12 col-sm-6 col-md-8">
+  	<div><h5><b>Summary</b></h5></div><hr/>
+  	<p ng-bind-html="show.summary | trustHTML"></p>
+  	<div>
+  	<h5><b>Cast </b></h5><hr/>
+  	<div ng-repeat="character in show._embedded.cast" class="col-xs-12 col-sm-6 col-md-8">
+  		<div>
+  			<img ng-src="{{character.person.image.medium}}" ng-if="character.person.image!=null" width="50" height="60">
+        <img ng-src="{{character.charecter.image.medium}}" ng-if="charecter.person.image==null && charecter.charecter.image!=null" width="50" height="60">
+
+  			<img ng-src="../images/default.png" ng-if="character.person.image==null && charecter.charecter.image==null"" width="50" height="60">
+  			{{character.person.name}} ... {{character.character.name}}
+  			
+  		</div>
+  	</div>
+  	<br/>
+	</div>
+  </div>
+</div>
+</div>
